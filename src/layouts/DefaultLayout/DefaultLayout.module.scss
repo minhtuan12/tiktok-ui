@@ -1,0 +1,19 @@
+.wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  min-height: var(--default-layout-header-min-height);
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-top: 60px;
+}
+
+.content {
+  flex: 1;
+  min-height: var(--default-layout-header-min-height);
+  color: #fff;
+}

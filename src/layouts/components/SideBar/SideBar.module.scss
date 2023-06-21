@@ -1,0 +1,21 @@
+.wrapper {
+  width: 240px;
+  padding: 20px 0 26px 8px;
+  min-height: 100%;
+}
+
+//scroll bar
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, .08);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}

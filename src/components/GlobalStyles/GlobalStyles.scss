@@ -1,0 +1,68 @@
+@import 'normalize.css';
+
+:root {
+  --primary: #fe2c55;
+  --white: rgba(255, 255, 255, .9);
+  --black: rgb(37, 37, 37);
+
+  // default layout
+  --default-layout-header-min-height: 1000px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// fonts
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../../assets/font/Proxima-Nova-Bold.woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: SofiaPro;
+  src: url("../../../assets/font/sofiapro-bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../../assets/font/Proxima-Nova-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../../assets/font/Proxima-Nova-Semibold.woff2');
+  font-weight: 600;
+}
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-y: overlay;
+  color: var(--white);
+}
+
+//scroll bar
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, .08);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}

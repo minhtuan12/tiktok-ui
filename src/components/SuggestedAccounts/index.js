@@ -1,0 +1,1 @@
+import SuggestedAccounts from './SuggestedAccounts'

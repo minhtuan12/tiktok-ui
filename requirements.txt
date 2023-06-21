@@ -1,0 +1,11 @@
+AUTH
+    ui
+    localStorage
+
+
+VIDEO
+    fake data   x
+    ui          x
+
+
+LIKE & FOLLOW

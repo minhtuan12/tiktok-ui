@@ -1,0 +1,98 @@
+.wrapper {
+  padding: 20px;
+  height: 155px;
+}
+
+.header {
+  height: 44px;
+  width: 280px;
+  display: flex;
+  margin-bottom: 12px;
+  margin-top: -5px;
+}
+
+.btn {
+  padding-left: 147px;
+  padding-top: 6px;
+}
+
+.avatar {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.body {
+
+}
+
+.nickname {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.check {
+  font-size: 1.3rem;
+  margin-left: 4px;
+  color: #20d5ec;
+}
+
+.name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.value {
+  font-weight: 700;
+  margin-right: 6px;
+  font-size: 17px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.label {
+  margin-right: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 17px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.analytics {
+  margin-top: 8px;
+}
+
+.followed-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.08);
+  min-width: 106px;
+  min-height: 28px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  font-family: ProximaNova, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 6px 8px;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: rgb(208, 209, 211);
+    background-color: rgb(18, 18, 18);
+  }
+}

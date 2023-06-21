@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  padding-top: 16px;
+  padding-left: 8px;
+  border-top: 1px solid #2f2f2f;
+}
+
+.content {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, .5);
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  display: inline-block;
+  margin-right: 6px;
+  margin-top: 5px;
+
+  &:hover  {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

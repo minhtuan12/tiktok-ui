@@ -1,0 +1,403 @@
+.wrapper {
+  display: flex;
+  padding: 36px 24px;
+  flex: 1 1 auto;
+  min-height: calc(100vh - 59px);
+  padding-top: 32px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info {
+  position: relative;
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  max-width: 624px;
+  padding-right: 92px;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar {
+  cursor: pointer;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+}
+
+.analytics {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 22px;
+  color: rgba(18, 18, 18, .75);
+}
+
+.user-bio {
+  text-align: left;
+  color: rgba(255, 255, 255, .9);
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  white-space: pre-line;
+  margin-top: 10px;
+}
+
+.username {
+  flex: 1;
+  cursor: pointer;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.nickname {
+  font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  word-break: break-word;
+}
+
+.name {
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  height: 25px;
+  overflow: hidden;
+  max-width: 450px;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-end;
+}
+
+.edit-profile {
+  position: relative;
+  width: 136px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.edit-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, .9);
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, .08);
+  min-height: 36px;
+  font-weight: 600;
+  font-family: SofiaPro, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 36px;
+  font-size: 16px;
+  padding: 0 16px;
+  min-width: 136px;
+  line-height: 24px;
+  margin-right: 8px;
+
+  &:hover {
+    border-color: #ffffff;
+    background: #000;
+  }
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  color: rgba(255, 255, 255, .9);
+  margin-right: 3.7px;
+}
+
+.lock {
+  width: 17px;
+  height: 17px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-right: 7px;
+}
+
+.pre-lock {
+  width: 17px;
+  height: 17px;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.following,
+.followers,
+.likes {
+  color: rgba(255, 255, 255, .9);
+  font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  direction: ltr;
+  align-items: baseline;
+  margin-right: 20px;
+}
+
+.unit {
+  color: rgba(255, 255, 255, .75);
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.share-btn {
+  position: absolute;
+  top: 11px;
+  cursor: pointer;
+  right: 52px;
+  background: transparent;
+  border: none;
+}
+
+.share-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+  min-width: 520px;
+  position: relative;
+  justify-content: flex-start;
+  min-height: 490px;
+  flex-direction: column;
+  .tab-active {
+    color: rgba(255, 255, 255, .9);
+  }
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+.videos-tab,
+.likes-tab {
+  font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 44px;
+  padding: 0 32px;
+  cursor: pointer;
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+}
+
+.slide {
+  position: absolute;
+  height: 2px;
+  background: rgba(255, 255, 255, .9);
+  bottom: 0;
+  -webkit-transition: -webkit-transform .3s;
+  transition: transform .3s;
+}
+
+.video-main {
+  flex: 0 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 490px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.profile-icon {
+  width: 90px;
+  height: 90px;
+}
+
+.video-upload {
+  font-size: 24px;
+  line-height: 28px;
+  font-family: SofiaPro,Arial,Tahoma,PingFangSC,sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .9);
+  margin-top: 24px;
+}
+
+.video-appear {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .75);
+  margin-top: 8px;
+}
+
+.liked-main {
+  width: 100%;
+}
+
+.liked-container {
+  display: grid;
+  gap: 24px 16px;
+  grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+}
+
+.video-container {
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.description {
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 400;
+  padding: 2px 4px 0;
+  height: 28px;
+  overflow: hidden;
+  box-sizing: content-box;
+  display: block;
+  margin-top: 4px;
+  text-overflow: ellipsis;
+  max-height: 20px;
+  margin-left: -12px;
+}
+
+.analytic {
+  display: flex;
+  position: absolute;
+  margin-top: 270px;
+  margin-right: 80px;
+}
+
+.likes {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.follow-btn {
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  min-width: 208px;
+  line-height: 22px;
+  padding: 6px 8px;
+  align-items: center;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 59, 92, 1);
+  min-height: 36px;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: SofiaPro,PingFangSC,sans-serif;
+}
+
+.following-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgb(255, 59, 92);
+  border-color: rgb(255, 59, 92);
+  background-color: rgba(255, 255, 255, 0.08);
+  min-width: 164px;
+  min-height: 36px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: SofiaPro, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 6px 8px;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 36px;
+  line-height: 22px;
+  margin-right: 8px;
+}
+
+.followed-icon {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 40px;
+  height: 36px;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.08);
+  float: right;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
