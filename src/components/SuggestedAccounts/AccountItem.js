@@ -7,6 +7,7 @@ import {Wrapper as PopperWrapper} from '~/components/Popper'
 import AccountPreview from "~/components/SuggestedAccounts/AccountPreview";
 import {Link} from "react-router-dom";
 import {data} from "~/data/Data";
+import {useState} from "react";
 
 const cx = classNames.bind(styles)
 
@@ -16,6 +17,10 @@ function AccountItem() {
 
     // Follow
     const following = JSON.parse(localStorage.getItem("following"))
+    const currentUserFollowing = currentUser ? following[currentUserId] : []
+
+    const follow = currentUserFollowing.length > 0 && currentUserFollowing.map(each => each.id)
+    const suggestedAccount = follow ? data.filter(each => !follow.includes(each.user.id)) : data
 
     const renderPreview = (account, props) => {
         return (
@@ -32,15 +37,17 @@ function AccountItem() {
     return (
         <>
             {
-                data.map((account, index) => (
-                    <Link key={index} to={`/@${account.user.username}`} style={{ textDecoration: 'none', color: '#ffffff'}}>
-                        <Tippy
-                            interactive
-                            delay={[300, 0]}
-                            offset={[0, 0]}
-                            render={() => (renderPreview(account))}
-                            placement={"bottom"}
-                        >
+                suggestedAccount.map((account, index) => (
+                    <Tippy
+                        key={index}
+                        interactive
+                        delay={[300, 0]}
+                        offset={[0, 0]}
+                        render={() => (renderPreview(account))}
+                        placement={"bottom"}
+                    >
+                        <Link to={`/@${account.user.username}`}
+                              style={{textDecoration: 'none', color: '#ffffff'}}>
                             <div className={cx('account-item')}>
                                 <img
                                     className={cx('avatar')}
@@ -55,8 +62,8 @@ function AccountItem() {
                                     <p className={cx('name')}>{account.user.username}</p>
                                 </div>
                             </div>
-                        </Tippy>
-                    </Link>
+                        </Link>
+                    </Tippy>
                 ))
             }
         </>

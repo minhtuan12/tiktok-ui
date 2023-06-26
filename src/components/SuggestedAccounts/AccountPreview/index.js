@@ -1,13 +1,10 @@
 import classNames from "classnames/bind";
 import styles from './AccountPreview.module.scss'
-import Button from "~/components/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
-import image1 from "~/asset/image/image1.jpeg";
-import image2 from "~/asset/image/image2.jpeg";
-import image3 from "~/asset/image/image3.jpeg";
 import {useState} from "react";
 import {actions, useStore} from "~/store";
+import {Link} from "react-router-dom";
 
 const cx = classNames.bind(styles)
 
@@ -21,19 +18,11 @@ function AccountPreview({account}) {
     const following = JSON.parse(localStorage.getItem("following"))
     const currentUserFollowing = currentUser ? following[currentUserId] : []
 
-    const [follow, setCurrentFollow] = useState(currentUserFollowing)
-    const [followed, setFollowed] = useState(false)
+    const [follow, setCurrentFollow] = useState(currentUserFollowing.map(each => each.id))
 
     const [state, dispatch] = useStore()
 
-    const checkFollowing = (key) => {
-        if (follow && follow.length > 0)
-            return !!follow.some(tmp => tmp.id === key.id);
-        return false
-    }
-
     const handleFollow = (key) => {
-        setFollowed(true)
         dispatch(actions.followed())
 
         if (!currentUser)
@@ -59,10 +48,12 @@ function AccountPreview({account}) {
             {
                 <div className={cx('wrapper')}>
                     <div className={cx('header')}>
-                        <img className={cx('avatar')}
-                             src={account.user.avatar}
-                             alt=""/>
-                        {currentUser && checkFollowing(account) ? (
+                        <Link to={`/@${account.user.username}`} style={{textDecoration: 'none', color: '#ffffff'}}>
+                            <img className={cx('avatar')}
+                                 src={account.user.avatar}
+                                 alt=""/>
+                        </Link>
+                        {currentUser && follow && follow.includes(account.user.id) ? (
                             <div className={cx('btn')}>
                                 <button className={cx('followed-btn')}
                                         onClick={() => handleFollow(account.user)}>Following
@@ -70,19 +61,27 @@ function AccountPreview({account}) {
                             </div>
                         ) : (
                             <div className={cx('btn')}>
-                                <button className={cx('follow-btn')} onClick={() => handleFollow(account.user)}>Follow</button>
+                                <button className={cx('follow-btn')}
+                                        onClick={() => handleFollow(account.user)}>Follow
+                                </button>
                             </div>
                         )}
                     </div>
                     <div className={cx('body')}>
                         <p className={cx('nickname')}>
-                            <span>{account.user.username}</span>
-                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle}/>
+                            <Link to={`/@${account.user.username}`} style={{textDecoration: 'none', color: '#ffffff'}}>
+                                <span>{account.user.username}</span>
+                                <FontAwesomeIcon className={cx('check')} icon={faCheckCircle}/>
+                            </Link>
                         </p>
-                        <p className={cx('name')}>{account.user.name}</p>
+                        <Link to={`/@${account.user.username}`} style={{textDecoration: 'none', color: '#ffffff'}}>
+                            <p className={cx('name')}>{account.user.name}</p>
+                        </Link>
                         <p className={cx('analytics')}>
                             <span className={cx('value')}>{account.user.followers}</span>
                             <span className={cx('label')}>Followers</span>
+                            <span className={cx('value')}>{account.user.likes}</span>
+                            <span className={cx('label')}>Likes</span>
                         </p>
                         {account.user.bio &&
                             <p className={cx('bio')}>

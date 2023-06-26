@@ -23,7 +23,6 @@ import {Flash} from "@primer/react";
 const cx = classNames.bind(styles)
 
 function Profile() {
-
     const currentUser = JSON.parse(localStorage.getItem('currentUser'))
     let user = currentUser ? currentUser[0] : null
     const followingAccounts = currentUser ? JSON.parse(localStorage.getItem('following'))[user.id] : []
@@ -49,21 +48,21 @@ function Profile() {
     const param = useParams()
     const [layout, setLayout] = useState(1)
     const [state, dispatch] = useStore()
+    // dispatch(actions.edited_profile())
 
     useEffect(() => {
         // if (user) {
-            if (param.user.slice(1) === user.username) {
+            if (user && param.user.slice(1) === user.username) {
                 setLayout(1)
                 setAccount(user)
             }
         // } else {
             else if (listUsers.includes(param.user.slice(1))) {
                 // eslint-disable-next-line array-callback-return
+                setLayout(2)
                 setAccount(data.filter(each => {
                     return param.user.slice(1) === each.user.username
                 })[0].user)
-                console.log(account)
-                setLayout(2)
             } else {
                 setLayout(3)
             }
@@ -72,6 +71,9 @@ function Profile() {
 
     if (layout === 3)
         return <NotFound/>
+
+    if (!account)
+        return (<></>)
 
     return (
         <>
@@ -141,11 +143,11 @@ function Profile() {
                                     <span className={cx('unit')}>Following</span>
                                 </div>
                                 <div className={cx('followers')}>
-                                    <strong>56</strong>
+                                    <strong>{account.followers}</strong>
                                     <span className={cx('unit')}>Followers</span>
                                 </div>
                                 <div className={cx('likes')}>
-                                    <strong>0</strong>
+                                    <strong>{account.likes}</strong>
                                     <span className={cx('unit')}>Likes</span>
                                 </div>
                             </div>

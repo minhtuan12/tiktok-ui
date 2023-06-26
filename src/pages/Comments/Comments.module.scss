@@ -242,7 +242,6 @@
   margin-left: 16px;
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  cursor: pointer;
   flex: 1;
   box-sizing: content-box;
 }
@@ -284,7 +283,6 @@
   outline: none;
   width: 100%;
   caret-color: var(--primary);
-  cursor: pointer;
   resize: none;
 }
 
@@ -369,7 +367,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
-  width: 23%;
 
   &:hover {
     text-decoration: underline;
@@ -462,9 +459,71 @@
   border-radius: 50%;
 }
 
+.reply-comment-action {
+  padding-left: 52px;
+  padding-top: 16px;
+}
 
+.reply-action-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
 
+.reply-action-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.down-arrow-icon {
+  margin-left: 6px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  transform: none;
+}
+
+.reply-comment {
+  padding-left: 52px;
+}
+
+.reply-hide-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: right;
+}
+
+.reply-hide-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.up-arrow-icon {
+  margin-left: 6px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
 
 
 

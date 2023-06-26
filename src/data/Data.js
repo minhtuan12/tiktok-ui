@@ -21,6 +21,8 @@ import blurImage1 from '~/asset/image/blurImage1.jpeg'
 import blurImage2 from '~/asset/image/blurImage2.jpeg'
 import blurImage3 from '~/asset/image/blurImage3.jpeg'
 
+const users = JSON.parse(localStorage.getItem('users'))
+
 const SHARE_MENU = [
     {
         icon: <FontAwesomeIcon icon={faCode} style={{color: "#ffffff",}}/>,
@@ -99,7 +101,7 @@ const SHARE_MENU = [
 const data = [
     {
         id: "vid1",
-        src: video1,
+        src: video2,
         description: "Trả lời @𝐕𝐢𝐞̣̂𝐭 𝐌𝐲̃ ✏️ khẩu trang thời hậu covic , sao mà đỡ được",
         likes: "124K",
         comments: "234",
@@ -120,13 +122,14 @@ const data = [
             name: "Huỳnh Nguyễn",
             avatar: image1,
             followers: '124K',
+            likes: '0',
             bio: 'No bio yet',
         },
         imageFirstTime: blurImage1,
     },
     {
         id: "vid2",
-        src: video2,
+        src: video1,
         description: "Ko hiểu ai sợ hơn ông ngoại, Sóc hay Nguyễn Minh Hoàng? 🤣",
         likes: "124",
         comments: "1009",
@@ -144,6 +147,7 @@ const data = [
             name: "Trox & Lacci",
             avatar: image2,
             followers: '56K',
+            likes: '1202',
             bio: 'No bio yet',
         },
         imageFirstTime: blurImage2,
@@ -175,6 +179,7 @@ const data = [
             name: "âm nhạc",
             avatar: image3,
             followers: '3544',
+            likes: '2008',
             bio: '🎵 ÂM NHẠC VIỆT NAM🎵',
         },
         imageFirstTime: blurImage3,

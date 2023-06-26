@@ -98,8 +98,11 @@ const VideoContent = ({each}) => {
         <div className={cx('content')}>
             <div className={cx('text')}>
                 <div className={cx('top')}>
-                    <span className={cx('name')}>{each.user.username}</span>
-                    <span className={cx('username')}>{each.user.name}</span>
+                    <Link to={`/@${each.user.username}`}
+                          style={{textDecoration: 'none', color: '#ffffff'}}>
+                        <span className={cx('name')}>{each.user.username}</span>
+                        <span className={cx('username')}>{each.user.name}</span>
+                    </Link>
 
                     <p className={cx('description')}>
                         {each.description}
